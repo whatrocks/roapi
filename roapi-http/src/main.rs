@@ -2,11 +2,13 @@
 
 use roapi_http::config::get_configuration;
 use roapi_http::startup::Application;
+use wasm_bindgen::prelude::*;
 
 #[cfg(snmalloc)]
 #[global_allocator]
 static ALLOC: snmalloc_rs::SnMalloc = snmalloc_rs::SnMalloc;
 
+#[wasm_bindgen]
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();

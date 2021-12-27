@@ -9,6 +9,7 @@ edition = "2018"
 [lib]
 name = "roapi_http"
 path = "src/lib.rs"
+crate-type = ["cdylib"]
 
 [[bin]]
 name = "roapi-http"
@@ -18,6 +19,9 @@ path = "src/main.rs"
 columnq = { path = "../columnq", version = "0", default-features = false }
 # for datafusion optimization
 snmalloc-rs = { version = "0.2", optional = true }
+
+# wasm
+wasm-bindgen = "0.2"
 
 # dependencies related to axum
 tokio = { version = "1", features = ["rt-multi-thread"] }
